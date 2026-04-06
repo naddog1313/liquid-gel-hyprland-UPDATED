@@ -1,0 +1,25 @@
+# Learn how to configure Hyprland: https://wiki.hyprland.org/Configuring/
+
+
+# Change your own setup in these files (and overwrite any settings from defaults!)
+source = ~/.config/hypr/monitors.conf
+source = ~/.config/hypr/input.conf
+source = ~/.config/hypr/bindings.conf
+source = ~/.config/hypr/looknfeel.conf
+source = ~/.config/hypr/autostart.conf
+source = ~/.config/hypr/plugins.conf
+# Add any other personal Hyprland configuration below
+windowrulev2 = float, class:^(btop-float)$# windowrule = workspace 5, match:class qemu
+exec-once = gsettings set org.gnome.desktop.interface icon-theme "WhiteSur-light"
+exec-once = swww img "/home/dog/.local/share/wallpapers/NZMWYB-MacTahoe/MacTahoe-Light/contents/images/3840x2160.jpeg
+exec-once = waybar &
+layerrule = blur, waybar
+layerrule = ignorealpha 0, waybar
+layerrule = ignorezero, waybar
+# This tells Hyprland to blur any window with the class "Alacritty"
+windowrulev2 = opaque, class:^(Alacritty)$
+windowrulev2 = opacity 0.0 0.0,class:^(xwaylandvideobridge)$
+windowrulev2 = noanim,class:^(xwaylandvideobridge)$
+windowrulev2 = noinitialfocus,class:^(xwaylandvideobridge)$
+windowrulev2 = maxsize 1 1,class:^(xwaylandvideobridge)$
+windowrulev2 = noblur,class:^(xwaylandvideobridge)$

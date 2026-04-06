@@ -1,0 +1,59 @@
+* {
+    /* SF Pro Rounded first for text, JetBrains/Symbols for icons */
+    font-family: ui-rounded, "SF Pro Rounded", "JetBrains Mono", "Symbols Nerd Font", sans-serif;
+    font-weight: 500; /* This makes it "Medium" */
+    font-size: 15px;
+    border: none;
+    border-radius: 0;
+}
+
+/* The Main Glass Bar */
+window#waybar {
+    background-color: rgba(20, 20, 20, 0.1); /* Darker glass for visibility */
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 16px;
+    color: #ffffff;
+    transition-property: background-color;
+    transition-duration: .5s;
+}
+
+/* Rounded Individual Action Pills */
+#custom-screenshot,
+#custom-terminal,
+#custom-browser,
+#custom-files {
+    font-size: 16px;
+    padding: 0 10px;
+    margin: 4px 2px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    color: #ffffff;
+    transition: all 0.3s ease;
+}
+
+#custom-walker {
+    font-size: 18px; /* Slightly larger 'Apple' style menu */
+    color: #00aaff;  /* Subtle navy/blue accent */
+}
+
+/* Hover Effects */
+#custom-terminal:hover, #custom-browser:hover, #custom-files:hover, #custom-walker:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: #00aaff;
+}
+
+/* Workspace Styling */
+#workspaces button {
+    padding: 0 8px;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+#workspaces button.active {
+    color: #ffffff;
+    font-weight: bold;
+}
+
+/* Right Side Spacing */
+#clock, #network, #pulseaudio, #battery, #cpu {
+    padding: 0 10px;
+}

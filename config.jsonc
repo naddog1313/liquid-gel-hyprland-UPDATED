@@ -1,0 +1,96 @@
+{
+  "layer": "top",
+  "position": "top",
+  "margin-top": 8,
+  "height": 36,
+  "margin-left": 12,
+  "margin-right": 12,
+  "spacing": 6,
+
+  "modules-left": [
+    "custom/terminal",
+    "custom/browser",
+    "custom/files",
+    "custom/screenshot",
+    "hyprland/workspaces"
+  ],
+
+  "modules-center": [
+    "clock"
+  ],
+
+  "modules-right": [
+    "cpu",
+    "network",
+    "pulseaudio",
+    "battery"
+  ],
+
+"custom/screenshot": {
+    "format": "󰄀",
+    "on-click": "sh -c 'grim -g \"$(slurp)\" $HOME/Pictures/$(date +%s.png)'",
+    "on-click-right": "sh -c 'grim $HOME/Pictures/$(date +%s.png)'",
+    "tooltip": false
+},
+
+  "custom/terminal": {
+    "format": "",
+    "on-click": "alacritty",
+    "on-click-right": "walker",
+    "tooltip": false
+  },
+
+  "custom/browser": {
+    "format": "",
+    "on-click": "google-chrome-stable",
+    "tooltip": false
+  },
+
+  "custom/files": {
+    "format": "",
+    "on-click": "XDG_CURRENT_DESKTOP=KDE dbus-run-session dolphin",
+    "tooltip": false
+  },
+
+  "hyprland/workspaces": {
+    "format": "{name}",
+    "active-only": false,
+    "all-outputs": true,
+    "persistent-workspaces": {
+      "*": 5
+    }
+  },
+
+  "cpu": {
+    "interval": 10,
+    "format": " {usage}%",
+    "on-click": "alacritty --class btop-float -e btop"
+  },
+
+  "network": {
+    "format-wifi": " {essid}",
+    "format-ethernet": " {ifname}",
+    "format-disconnected": "⚠ Disconnected",
+    "on-click": "nm-connection-editor"
+  },
+
+  "pulseaudio": {
+    "format": "{icon} {volume}%",
+    "format-muted": " Muted",
+    "format-icons": {
+      "default": ["", "", ""]
+    },
+    "on-click": "pavucontrol"
+  },
+
+  "clock": {
+    "format": "{:%a %d %b %I:%M %p}",
+    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+  },
+
+  "battery": {
+    "states": { "warning": 30, "critical": 15 },
+    "format": "{icon} {capacity}%",
+    "format-icons": ["", "", "", "", ""]
+  }
+}

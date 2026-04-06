@@ -1,0 +1,16 @@
+[env]
+TERM = "xterm-256color"
+
+[terminal]
+osc52 = "CopyPaste"
+
+[window]
+padding = { x = 14, y = 14 }
+opacity = 0.4  # Lower is more "glassy," 0.7–0.8 is the sweet spot
+blur = true 
+[keyboard]
+bindings = [
+  { key = "Insert", mods = "Shift", action = "Paste" },
+  { key = "Insert", mods = "Control", action = "Copy" },
+  { key = "Return", mods = "Shift", chars = "\u001B\r" }
+]
